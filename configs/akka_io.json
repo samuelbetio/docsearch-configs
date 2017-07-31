@@ -1,0 +1,30 @@
+{
+  "index_name": "akka_io",
+  "start_urls": [
+    {
+      "url": "http://doc.akka.io/docs/akka/current/(?P<language>.*?)/",
+      "variables": {
+        "language": [
+          "scala",
+          "java"
+        ]
+      }
+    }
+  ],
+  "stop_urls": [
+    "index.html"
+  ],
+  "selectors_exclude": [
+    "#scroller-anchor"
+  ],
+  "selectors": {
+    "lvl0": "#docs h1",
+    "lvl1": "#docs h2",
+    "lvl2": "#docs h3",
+    "lvl3": "#docs h4",
+    "lvl4": "#docs h5",
+    "text": "#docs p"
+  },
+  "min_indexed_level": 2,
+  "nb_hits": 9104
+}

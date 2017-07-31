@@ -1,0 +1,19 @@
+{
+  "index_name": "batch",
+  "start_urls": [
+    "https://batch.com/doc"
+  ],
+  "stop_urls": [
+    "https://batch.com/doc/$"
+  ],
+  "selectors": {
+    "lvl0": ".lvl0",
+    "lvl1": ".doc__content__header h1",
+    "lvl2": "#content_doc h2",
+    "lvl3": "#content_doc h3",
+    "lvl4": "#content_doc h4",
+    "text": "#content_doc p, #content_doc li"
+  },
+  "nb_hits": 3310,
+  "min_indexed_level": 2
+}

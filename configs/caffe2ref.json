@@ -1,0 +1,82 @@
+{
+  "index_name": "caffe2ref",
+  "start_urls": [
+    {
+      "url": "http://caffe2.ai/docs",
+      "selectors_key": "doc",
+      "page_rank": 1
+    },
+    {
+      "url": "https://caffe2.ai/docs",
+      "selectors_key": "doc",
+      "page_rank": 1
+    },
+    {
+      "url": "http://caffe2.ai/doxygen-python/html",
+      "selectors_key": "ref"
+    },
+    {
+      "url": "https://caffe2.ai/doxygen-python/html",
+      "selectors_key": "ref"
+    },
+    {
+      "url": "http://caffe2.ai/doxygen-c/html",
+      "selectors_key": "ref"
+    },
+    {
+      "url": "https://caffe2.ai/doxygen-c/html",
+      "selectors_key": "ref"
+    },
+    "http://caffe2.ai/docs/getting-started.html",
+    "http://caffe2.ai/doxygen-python/html/annotated.html"
+  ],
+  "stop_urls": [
+    ".*^(?!.*html)",
+    "members\\.html",
+    "_source.html"
+  ],
+  "selectors_exclude": [
+    ".permalink",
+    "#markdown-toc",
+    ".header-link"
+  ],
+  "selectors": {
+    "doc": {
+      "lvl0": {
+        "selector": "//*[@id='doc_nav']//a[contains(@class, 'navItemActive')]/../../../h3",
+        "type": "xpath",
+        "global": true,
+        "default_value": "Documentation"
+      },
+      "lvl1": ".post-header h1.post-title",
+      "lvl2": ".post-content h2",
+      "lvl3": ".post-content h3",
+      "lvl4": ".post-content h4",
+      "lvl5": ".post-content h5",
+      "text": "article.post-content p, article.post-content li"
+    },
+    "ref": {
+      "lvl0": "#projectname",
+      "lvl1": {
+        "selector": "//*[@id='nav-path']/ul/li[1]/a",
+        "type": "xpath"
+      },
+      "lvl2": {
+        "selector": "//*[@id='nav-path']/ul/li[2]/a",
+        "type": "xpath"
+      },
+      "lvl3": {
+        "selector": "//*[@id='nav-path']/ul/li[3]/a",
+        "type": "xpath"
+      },
+      "lvl4": ".groupheader",
+      "lvl5": "td.memItemRight, .memtitle, td.memname",
+      "text": ".textblock"
+    }
+  },
+  "min_indexed_level": {
+    "doc": 1,
+    "ref": 3
+  },
+  "nb_hits": 5908
+}
